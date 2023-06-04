@@ -3,7 +3,9 @@ package day06_JUnitFramework;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -47,6 +49,23 @@ public class C05_Assertions {
         String actualTitle=driver.getTitle();
 
         Assert.assertFalse(actualTitle.contains(unexpectedICerik));
+        driver.close();
+
+    }
+    @Test
+    public  void test03(){
+        //○ logoTest => BestBuy logosunun görüntülendigini test edin
+        mahserin4Atlisi();
+        WebElement bestBuyLogo=driver.findElement(By.xpath("(//img[@class='logo'])[1]"));
+        Assert.assertTrue(bestBuyLogo.isDisplayed());
+        driver.close();
+    }
+    @Test
+    public void test04(){
+        //○ FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
+        mahserin4Atlisi();
+        WebElement bestBuyFransızcaLink=driver.findElement(By.xpath("//*[@class='is-active']"));
+        Assert.assertTrue(bestBuyFransızcaLink.isDisplayed());
         driver.close();
 
     }

@@ -17,7 +17,8 @@ public class C03_Assertion {
         /*
         Bir Assertion failed olursa
         Assertion'in oldugu satirda exception olusur
-        ve assertion satirindan sonraki kodlar CALISMAZ
+        ve assertion satirindan sonraki kodlar(bu kodlar mesala @test {} paratezi içindeki
+        exception satırından sonrası çalışmaz ) CALISMAZ
      */
 
 
@@ -27,7 +28,7 @@ public class C03_Assertion {
         //1- google anasayfaya gidip, url'in google icerdigini test edin
         System.out.println("google test");
         mahserin4Atlisi();
-        driver.get("https://google.com");
+        driver.get("https://www.google.com");
         String expectedIcerik="google";
         String actualUrl=driver.getCurrentUrl();
 
