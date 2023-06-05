@@ -1,4 +1,4 @@
-package day07;
+package day07_JUnit_dropdown;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
@@ -51,6 +51,7 @@ e. Sectiginiz radio button’un seçili, ötekilerin seçili olmadigini test edi
         //  d. Radio button elementlerini locate edin ve size uygun olani secin
         Thread.sleep(3000);
         WebElement maleButtonElementi=driver.findElement(By.xpath("(//*[@class='_8esa'])[2]"));
+        //------------------//*[@id='u_d_5_QU']
         Thread.sleep(3000);
         WebElement femaleButtonElementi=driver.findElement(By.xpath("(//*[@class='_8esa'])[1]"));
         Thread.sleep(3000);

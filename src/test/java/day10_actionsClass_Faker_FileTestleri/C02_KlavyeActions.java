@@ -1,6 +1,5 @@
 package day10_actionsClass_Faker_FileTestleri;
 
-import com.github.javafaker.Faker;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,15 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class C03_FakerClass extends TestBase {
+public class C02_KlavyeActions extends TestBase {
     @Test
     public void test01() throws InterruptedException {
-         /* Faker kutuphanesi
-            feyk degerler olusturabilecegimiz bir kutuphanedir
-
-            buradan deger uretebilmek icin
-            faker class'indan bir obje olusturmaliyiz
-     */
         //1- https://www.facebook.com adresine gidelim ve cookies'i kabul edelim
         driver.get("https://www.facebook.com");
         //driver.findElement(By.xpath("//button[@*='_42ft _4jy0 _al65 _4jy3 _4jy1 selected _51sy']")).click();
@@ -27,20 +20,17 @@ public class C03_FakerClass extends TestBase {
         Actions actions= new Actions(driver);
         WebElement isimKutusu=driver.findElement(By.xpath("(//input[@class='inputtext _58mg _5dba _2ph-'])[1]"));
         //(By.xpath("//*[@name='firstname']"));
-        Faker faker=new Faker();
-        String email=faker.internet().emailAddress();
-
 
         actions.click(isimKutusu)
-                .sendKeys(faker.name().firstName())
+                .sendKeys("Ali")
                 .sendKeys(Keys.TAB)
-                .sendKeys(faker.name().lastName())
+                .sendKeys("KARAHAN")
                 .sendKeys(Keys.TAB)
-                .sendKeys(email)
+                .sendKeys("a1234321bc@gmail.com")
                 .sendKeys(Keys.TAB)
-                .sendKeys(email)
+                .sendKeys("a1234321bc@gmail.com")
                 .sendKeys(Keys.TAB)
-                .sendKeys(faker.internet().password())
+                .sendKeys("Ankara06")
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB)
                 .sendKeys("11")
@@ -59,7 +49,6 @@ public class C03_FakerClass extends TestBase {
                 .sendKeys(Keys.ENTER)
                 .perform();
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
-
 }
